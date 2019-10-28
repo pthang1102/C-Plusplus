@@ -1,0 +1,4 @@
+/* EXTRA EXERCISE (Counter, Dice and Inspector, 0,25p)
+We used counter, dice and inspector objects in our example program that demonstrated object oriented thinking. 
+The program generates 100 random numbers between (0.0, 1.0]. 
+It counts how many of those numbers are between (0.0, 0.5] and how many between (0.5, 1].*/
