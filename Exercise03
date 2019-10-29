@@ -1,0 +1,61 @@
+#include <iostream>
+#include <cmath>
+#include <time.h>
+# pragma warning(disable:4996)
+
+using namespace std;
+
+class String {
+private:
+	//PHASE 1
+	//char c_string[11];
+
+	//PHASE 2
+	char* c_string;
+public:
+	String(const char* string);
+	String(const String& s);
+	~String();
+	void list();
+};
+
+String::String(const char* string) {
+	//Phase 1
+	//strcpy_s(c_string, string);
+
+	//Phase 2
+	c_string = new char[strlen(string) + 1];
+	strcpy(c_string, string);
+}
+
+String::String(const String& s) {
+	c_string = new char[strlen(s.c_string) + 1];
+	strcpy(c_string, s.c_string);
+}
+
+String::~String() {
+	delete[]c_string;
+	cout << "Destructor done!\n";
+}
+
+void String::list() {
+	cout << c_string << "\n";
+}
+
+void f(String s) {
+	s.list();
+}
+
+/*PHASE 3
+void f(String &s) {
+	s.list();
+}*/
+
+int main() {
+	String s("abcdefg");
+	s.list();
+	f(s);
+	s.list();
+
+	return 0;
+}
